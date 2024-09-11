@@ -1,0 +1,25 @@
+﻿@model Portfolio.Models.ContactFormModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact</h1>
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+<form asp-action="Contact" method="post">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" required />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" required />
+    </div>
+    <div class="form-group">
+        <label for="Message">Message</label>
+        <textarea class="form-control" id="Message" name="Message" rows="4" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
